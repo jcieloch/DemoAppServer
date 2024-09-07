@@ -1,0 +1,34 @@
+INSERT INTO users (username, password, email, phoneNumber, role) VALUES
+('cataloguer1', 'password1', 'cataloguer1@example.com', '123456789', 'CATALOGUER'),
+('employee1', 'password2', 'employee1@example.com', '987654321', 'EMPLOYEE'),
+('cataloguer2', 'password3', 'cataloguer2@example.com', '123123123', 'CATALOGUER'),
+('employee2', 'password4', 'employee2@example.com', '456456456', 'EMPLOYEE'),
+('cataloguer3', 'password5', 'cataloguer3@example.com', NULL, 'CATALOGUER');
+
+INSERT INTO equipments (name, qrCode, description, producer, status) VALUES
+('Laptop', 'QR123', 'Dell XPS 13', 'Dell', 'IN_USE'),
+('Smartphone', 'QR456', 'iPhone 12', 'Apple', 'LOST'),
+('Tablet', 'QR789', 'iPad Pro', 'Apple', 'NOT_IN_USE'),
+('Monitor', 'QR101', 'Samsung 24" LED', 'Samsung', 'IN_USE'),
+('Printer', 'QR112', 'HP LaserJet Pro', 'HP', 'NOT_IN_USE');
+
+INSERT INTO inventory (date, status, cataloguer_id) VALUES
+('2024-09-01', 'IN_PROGRESS', 1),
+('2024-09-02', 'FINISHED', 3),
+('2024-09-03', 'IN_PROGRESS', 1),
+('2024-09-04', 'FINISHED', 3),
+('2024-09-05', 'IN_PROGRESS', 5);
+
+INSERT INTO inventory_items (equipment_id, user_id, description, localization, inventory_id) VALUES
+(1, 1, 'In good condition', 'Storage A', 1),
+(2, 2, 'Screen damaged', 'Office 101', 1),
+(3, 3, 'Battery issue', 'Storage B', 2),
+(4, 4, 'Works perfectly', 'Office 202', 3),
+(5, 5, 'Requires maintenance', 'Storage C', 4);
+
+INSERT INTO equipment_assigments (equipment_id, user_id, description, localization, assigmentDate) VALUES
+(1, 1, 'Assigned to cataloguer', 'Office A', '2024-09-01'),
+(2, 2, 'Assigned to employee', 'Office B', '2024-09-02'),
+(3, 3, 'Assigned to cataloguer', 'Office C', '2024-09-03'),
+(4, 4, 'Assigned to employee', 'Office D', '2024-09-04'),
+(5, 5, 'Assigned to cataloguer', 'Office E', '2024-09-05');
